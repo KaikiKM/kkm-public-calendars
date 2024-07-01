@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function fetchData() {
     return new Promise((resolve, reject) => {
       Tabletop.init({
-        key: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSft4kbth8eKgyIv3PD8FQnAx0Dn1_EIGWxOrk9PvPKNfn5cZkwv5hwZ23jJ2EahL0DMJ2lKaSRF0Kz/pub?gid=0&single=true&output=csv',
+        key: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSft4kbth8eKgyIv3PD8FQnAx0Dn1_EIGWxOrk9PvPKNfn5cZkwv5hwZ23jJ2EahL0DMJ2lKaSRF0Kz/pubhtml',
         simpleSheet: true,
         callback: (data) => {
           resolve(data);
