@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario ICS</title>
+</head>
+<body>
+  <main>
+    <p>Qui puoi ottenere il link per il calendario ICS.</p>
+    <button id="copy-link">Copia Link del Calendario ICS</button>
+    <input type="text" id="calendar-link" value="https://tuo-utente.github.io/calendario-pubblico/ics.ics" readonly>
+  </main>
+  <script>
+    const copyButton = document.getElementById('copy-link');
+    const calendarLinkInput = document.getElementById('calendar-link');
+
+    copyButton.addEventListener('click', function() {
+      calendarLinkInput.select();
+      document.execCommand('copy');
+      alert('Link del calendario copiato!');
+    });
+  </script>
+</body>
+</html>

@@ -1,59 +1,52 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: #007BFF;
   color: white;
-  padding: 10px;
+  padding: 1em;
   text-align: center;
-}
-
-main {
-  padding: 20px;
 }
 
 #calendar {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
+  margin: 2em auto;
+  padding: 1em;
+  background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-button {
-  background-color: #4CAF50;
-  border: none;
+#copy-link {
+  background-color: #007BFF;
   color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 2px;
+  border: none;
+  padding: 0.5em 1em;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-input {
-  display: block;
-  margin: 10px auto;
-  width: 80%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+#copy-link:hover {
+  background-color: #0056b3;
+}
+
+input#calendar-link {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 1em;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 footer {
   text-align: center;
-  padding: 10px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #4CAF50;
+  padding: 1em;
+  background: #007BFF;
   color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }

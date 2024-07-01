@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
   const calendarEl = document.getElementById('calendar');
 
+  // Funzione per ottenere i dati dal Google Sheet usando Papa.parse
   function fetchData() {
     return new Promise((resolve, reject) => {
-      Tabletop.init({
-        key: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSft4kbth8eKgyIv3PD8FQnAx0Dn1_EIGWxOrk9PvPKNfn5cZkwv5hwZ23jJ2EahL0DMJ2lKaSRF0Kz/pubhtml',
-        simpleSheet: true,
-        callback: (data) => {
-          resolve(data);
+      const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSft4kbth8eKgyIv3PD8FQnAx0Dn1_EIGWxOrk9PvPKNfn5cZkwv5hwZ23jJ2EahL0DMJ2lKaSRF0Kz/pub?gid=0&single=true&output=csv';
+      Papa.parse(csvUrl, {
+        download: true,
+        header: true,
+        complete: (results) => {
+          resolve(results.data);
         },
         error: (error) => {
           reject(error);
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     events: async function(info, successCallback, failureCallback) {
       try {
         const data = await fetchData();
+
         const events = data.map(event => ({
           title: event.title,
           start: `${event.startDate}T${event.startTime}`,
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
           description: event.description,
           location: event.location
         }));
+
         successCallback(events);
       } catch (error) {
         failureCallback(error);
