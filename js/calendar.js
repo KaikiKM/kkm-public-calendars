@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         const data = await fetchData();
 
+        console.log(data);
+
         const events = data.map(event => ({
           title: event.title,
           start: `${event.startDate}T${event.startTime}`,
